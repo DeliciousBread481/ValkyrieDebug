@@ -28,7 +28,7 @@ jobs:
         run: chmod +x gradlew  
   
       - name: Setup Forge workspace  
-        run: ./gradlew setupDecompWorkspace --stacktrace  
+        run: ./gradlew setupCIWorkspace --stacktrace
   
       - name: Build mod  
         run: ./gradlew build --stacktrace  
