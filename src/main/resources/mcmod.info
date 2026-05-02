@@ -1,0 +1,10 @@
+[  
+  {  
+    "modid": "valkyriedebug",  
+    "name": "Valkyrie Debug",  
+    "description": "Debug mod to trace Valkyrie spawn events and their call stacks",  
+    "version": "1.0.0",  
+    "mcversion": "1.12.2",  
+    "authorList": ["deliciousbread481"]  
+  }  
+]
