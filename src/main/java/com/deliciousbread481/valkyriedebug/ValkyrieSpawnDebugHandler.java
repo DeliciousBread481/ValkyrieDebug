@@ -2,6 +2,8 @@ package com.deliciousbread481.valkyriedebug;
   
 import net.minecraft.entity.Entity;  
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;  
+import net.minecraftforge.event.entity.living.LivingDeathEvent;
+import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.living.LivingSpawnEvent;  
 import net.minecraftforge.fml.common.eventhandler.EventPriority;  
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;  
