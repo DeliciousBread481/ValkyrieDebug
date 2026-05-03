@@ -93,5 +93,32 @@ public class ValkyrieSpawnDebugHandler {
         LOG.warn("Event result: {}", event.getResult());  
         LOG.warn("Call stack:\n{}", getStackTrace());  
         LOG.warn("====================================");  
+    }
+    
+    @SubscribeEvent(priority = EventPriority.LOWEST, receiveCanceled = true)  
+    public void onLivingDeath(LivingDeathEvent event) {  
+        if (!isTargetEntity(event.getEntityLiving())) return;  
+  
+        LOG.warn("========== [LivingDeath] ==========");  
+        LOG.warn("Entity: {}", event.getEntityLiving().getClass().getName());  
+        LOG.warn("Damage source: {}", event.getSource());  
+        LOG.warn("Source entity: {}", event.getSource().getTrueSource());  
+        LOG.warn("Immediate source: {}", event.getSource().getImmediateSource());  
+        LOG.warn("Position: x={}, y={}, z={}", event.getEntityLiving().posX, event.getEntityLiving().posY, event.getEntityLiving().posZ);  
+        LOG.warn("Call stack:\n{}", getStackTrace());  
+        LOG.warn("====================================");  
     }  
+  
+    @SubscribeEvent(priority = EventPriority.LOWEST, receiveCanceled = true)  
+    public void onLivingHurt(LivingHurtEvent event) {  
+        if (!isTargetEntity(event.getEntityLiving())) return;  
+  
+        LOG.warn("========== [LivingHurt] ==========");  
+        LOG.warn("Entity: {}", event.getEntityLiving().getClass().getName());  
+        LOG.warn("Damage: {} from {}", event.getAmount(), event.getSource());  
+        LOG.warn("Health before: {}", event.getEntityLiving().getHealth());  
+        LOG.warn("Source entity: {}", event.getSource().getTrueSource());  
+        LOG.warn("Call stack:\n{}", getStackTrace());  
+        LOG.warn("==================================");  
+    }
 }
